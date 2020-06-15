@@ -1,0 +1,56 @@
+<%= form_with(model: folder, local: true) do |form| %>
+  <% if folder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+
+      <ul>
+      <% folder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form>
+    <div class="row">
+      <div class="col form-group">
+        <%= form.label :bp, class: "small mb-1" %>
+        <%= form.text_field :bp, class: "form-control py-4" %>
+      </div>
+
+      <div class="col form-group">
+        <%= form.label :pulse, class: "small mb-1" %>
+        <%= form.text_field :pulse, class: "form-control py-4" %>
+      </div>
+
+      <div class="col form-group">
+        <%= form.label :spo2, class: "small mb-1" %>
+        <%= form.text_field :spo2, class: "form-control py-4" %>
+      </div>
+
+      <div class="col form-group">
+        <%= form.label :temperature, class: "small mb-1" %>
+        <%= form.text_field :temperature, class: "form-control py-4" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :complaints, class: "small mb-1" %>
+      <%= form.text_field :complaints, class: "form-control py-4" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :advise, class: "small mb-1" %>
+      <%= form.text_field :advise, class: "form-control py-4" %>
+    </div>
+
+
+    <%= form.hidden_field :patient_id, value: @patient_id %>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+    <br>
+  </form>
+<% end %>

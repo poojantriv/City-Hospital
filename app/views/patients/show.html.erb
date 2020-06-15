@@ -1,0 +1,70 @@
+   <div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+      <main>
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                  <h4 class="text-center font-weight-light my-4">
+                  <%= @patient.name %> # <b class="font-weight-bold"><%= @patient.mrd %></b>
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <p id="notice"><%= notice %></p>
+                  <p>
+                    <strong>Age:</strong>
+                    <%= @patient.age %>
+                    |
+                    <strong>Air:</strong>
+                    <%= @patient.air %>
+                    |
+                    <strong>Status:</strong>
+                    <%= @patient.status %>
+                    |
+                    <strong>Bed:</strong>
+                    <%= @patient.bed %>
+                    |
+                    <strong>Ward:</strong>
+                    <%= @patient.ward %>
+                  </p>
+                  <p>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>Phone:</strong>
+                      <%= @patient.phone %>
+                    </div>
+                    <div class="col-6">
+                      <strong>Discharged:</strong>
+                      <text class="text-danger"><%= @patient.discharged %></text>
+                    </div>
+                  </div>
+                  </p>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>Address:</strong>
+                      <%= @patient.address %>
+                    </div>
+                    <div class="col-6">
+                      <strong>History:</strong>
+                      <%= @patient.history %>
+                    </div>
+                  </div>
+
+                  <br>
+                  <%= link_to 'Edit', edit_patient_path(@patient) %> |
+                  <%= link_to 'Back', patients_path %> |
+                  <!-- Passing patient_id to folders#new to link folder with patient and display folders for patient -->
+                  <%= link_to "Add File", {controller: "folders", action: "new", patient_id: @patient.id} %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= render 'folders' %>
+    </main>
+                 
+
+  </div>
+</div>

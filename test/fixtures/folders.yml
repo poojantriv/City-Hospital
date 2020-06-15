@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bp: MyString
+  pulse: MyString
+  spo2: MyString
+  temperature: MyString
+  complaints: MyString
+  advise: MyString
+  patient: one
+
+two:
+  bp: MyString
+  pulse: MyString
+  spo2: MyString
+  temperature: MyString
+  complaints: MyString
+  advise: MyString
+  patient: two

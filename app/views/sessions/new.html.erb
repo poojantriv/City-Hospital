@@ -1,0 +1,53 @@
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-body">
+                                    	<p id="alert"><%= alert %></p><div class="form-group">
+                                                
+                                            </div>
+                                    	<%= form_tag sessions_path do |form| %>
+                                        <form>
+                                             <!-- Radios -->
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" id="positive" name="ward" type="radio" value="positive" />
+                                                    <label class="custom-control-label" for="positive">
+                                                    Positive</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" id="suspected" name="ward" type="radio" value="suspected" />
+                                                    <label class="custom-control-label" for="suspected">
+                                                    Suspected</label>
+                                                </div>
+                                            <div class="form-group">
+                                            	<label class="small mb-1" for="email">Email</label>
+                                            	<input class="form-control py-4" id="email" name="email" type="text" placeholder="Enter ID" />
+                                            </div>
+                                            <div class="form-group">
+                                            	<label class="small mb-1" for="password">Password</label>
+                                            	<input class="form-control py-4" id="password" name="password" type="text" placeholder="Enter password" />
+                                            </div>
+                                           
+                                            <!-- <div class="form-group">
+                                                <label class="small mb-1" for="positive">Positive</label>
+                                                <input class="form-control py-4" id="positive" name="positive" type="text" placeholder="Enter password" />
+                                            </div> -->
+                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">	
+                                                <!-- <a class="small" href="password.html"></a> -->
+                                            	<%= submit_tag "Login", class: "btn btn-primary" %>
+                                        	</div>
+                                        </form>
+                                        <% end %>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>

@@ -1,0 +1,82 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form>
+  <div class="form-group">
+    <%= form.label :name, class: "small mb-1" %>
+    <%= form.text_field :name, class: "form-control py-4" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :age, class: "small mb-1" %>
+    <%= form.text_field :age, class: "form-control py-4" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :mrd, class: "small mb-1" %>
+    <%= form.text_field :mrd, class: "form-control py-4" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ward, class: "small mb-1" %>
+    <%= form.text_field :ward, class: "form-control py-4" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone, class: "small mb-1" %>
+    <%= form.text_field :phone, class: "form-control py-4" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :address, class: "small mb-1" %>
+    <%= form.text_field :address, class: "form-control py-4" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label "Positive / Suspected", class: "small mb-1" %>
+    <%= form.check_box :status, {:class => "form-control py-4"}, "Positive", "Suspected" %>
+  </div>
+
+<!--   <div class="form-group">
+    <%= form.label :air, class: "small mb-1" %>
+    <%= form.text_field :air, class: "form-control py-4" %>
+  </div> -->
+
+  <%= form.select :air, ['Air', 'O2', 'BiPep', 'Ventilator'], class: "dropdown" %>
+
+  <div class="form-group">
+    <%= form.label :bed, class: "small mb-1" %>
+    <%= form.text_field :bed, class: "form-control py-4" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :history, class: "small mb-1" %>
+    <%= form.text_field :history, class: "form-control py-4" %>
+  </div>
+
+  <!-- if params[:id] is nil, then we are in new controller, if not nil, we are in edit -->
+  <% if params[:id].nil? %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label "Discharged", class: "small mb-1" %>
+    <%= form.check_box :discharged, {:class => "form-control py-4"}%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br>

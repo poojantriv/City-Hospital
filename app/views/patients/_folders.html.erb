@@ -1,0 +1,77 @@
+<div id="layoutAuthentication">
+	<div id="layoutAuthentication_content">
+		<main>
+			<div class="container-fluid">
+				<% @patient_folders.each do |patient| %>
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="card shadow-lg border-0 rounded-lg mt-5">
+							<div class="card-header">
+								<h3 class="text-center font-weight-light">
+									<%= patient.created_at.strftime('%d-%b-%Y') %>	
+									<text class="font-italic">at <%= patient.created_at.strftime('%H:%M') %> </text>
+								</h3>
+								
+							</div>
+							<div class="card-body">
+								<p>
+								<div class="row">
+                    				<div class="col-3">
+										<strong>Bp:</strong>
+										<%= patient.bp %>
+									</div>
+									<div class="col-3">
+										<strong>Pulse:</strong>
+										<%= patient.pulse %>
+									</div>
+									<div class="col-3">
+										<strong>Spo2:</strong>
+										<%= patient.spo2 %>
+									</div>
+									<div class="col-3">
+										<strong>Temp:</strong>
+										<%= patient.temperature %>
+									</div>
+								</div>
+								</p>
+								<p>
+								<div class="row">
+                    				<div class="col-6">
+										<strong>Complaints:</strong>
+										<%= patient.complaints %>
+									</div>
+
+									<div class="col-6">
+										<strong>Advise:</strong>
+										<%= patient.advise %>
+									</div>
+								</div>
+								</p>
+									<!-- <strong>Patient:</strong>
+									<% patient_name = Patient.find_by(id: patient.patient_id) %>
+									<%= patient_name.name %> -->
+								<div class="row">
+                    				<div class="col-6">
+										<strong>Updated by:</strong>
+										<% if !patient.user_id.nil? %>
+										<% user_name = User.find_by(id: patient.user_id) %>
+										<%= user_name.email %>
+										<% end %>
+									</div>
+									<div class="col-6">
+										<strong>Updated at:</strong>
+										<%= patient.updated_at.strftime('%H:%M-%d/%m/%Y') %>
+									</div>
+								</div>
+								</p>
+								<%= link_to 'Edit', edit_folder_path(patient) %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</main>
+	</div>
+</div>
+

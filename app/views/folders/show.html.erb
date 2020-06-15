@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bp:</strong>
+  <%= @folder.bp %>
+</p>
+
+<p>
+  <strong>Pulse:</strong>
+  <%= @folder.pulse %>
+</p>
+
+<p>
+  <strong>Spo2:</strong>
+  <%= @folder.spo2 %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @folder.temperature %>
+</p>
+
+<p>
+  <strong>Complaints:</strong>
+  <%= @folder.complaints %>
+</p>
+
+<p>
+  <strong>Advise:</strong>
+  <%= @folder.advise %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <% patient_name = Patient.find_by(id: @folder.patient_id) %>
+  <%= patient_name.name %>
+</p>
+
+<%= link_to 'Edit', edit_folder_path(@folder) %> |
+<%= link_to 'Back', {controller: "patients", action: "show", id: @folder.patient_id} %>

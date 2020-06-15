@@ -1,0 +1,23 @@
+<div id="layoutAuthentication">
+	<div id="layoutAuthentication_content">
+		<main>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="card shadow-lg border-0 rounded-lg mt-5">
+							<div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Patient</h3>
+								<div class="card-body">
+
+									<%= render 'form', patient: @patient %>
+
+									<%= link_to 'Show', @patient, class: "btn btn-primary" %> |
+									<%= link_to 'Back', patients_path, class: "btn btn-primary" %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</div>

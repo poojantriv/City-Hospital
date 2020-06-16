@@ -88,7 +88,7 @@
             </thead>
             <tbody>
               <% @patients.each do |patient| %>
-                <% if patient.status == "Positive" && !patient.discharged  %>
+                <% if patient.status == "Positive"  %>
                     <td><%= patient.mrd %></td>
                     <td><%= link_to patient.name, patient %></td>
                     <td><%= patient.ward %></td>

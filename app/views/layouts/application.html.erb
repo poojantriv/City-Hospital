@@ -38,6 +38,19 @@
               <div class="sb-sidenav-menu">
                   <div class="nav">
                     <br>
+                      <div class="col-12">
+                        <div class="card bg-dark text-light mb-4">
+                          <div class="card-body">
+                            <strong>Total Patients </strong>
+                            <div class="text-small">Total Positive   : <%= Patient.where(status: "Positive").size %></div>
+                            <div class="text-small">Total Suspected    :<%= Patient.where(status: "Suspected").size %></div>
+                          </div>
+                          <!-- <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="#">View Details</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                          </div> -->
+                        </div>
+                      </div>
                       <% total_wards = Patient.distinct.pluck(:ward) %>
 
                       <% total_wards.each do |ward| %>
@@ -78,11 +91,9 @@
           <footer class="py-4 bg-light mt-auto">
               <div class="container-fluid">
                   <div class="d-flex align-items-center justify-content-between small">
-                      <div class="text-muted">Copyright &copy; Your Website 2019</div>
+                      <div class="text-muted">Copyright &copy; Poojan Trivedi</div>
                       <div>
-                          <a href="#">Privacy Policy</a>
-                          &middot;
-                          <a href="#">Terms &amp; Conditions</a>
+                          
                       </div>
                   </div>
               </div>

@@ -18,9 +18,9 @@ helper_method :ward
   # IMP : application controller methods can be used everywhere if declared HELPER
   def ward
   	if session[:ward_id] == "positive"
-  		return "positive"
+  		return "Positive"
   	elsif session[:ward_id] == "suspected"
-  		return "suspected"
+  		return "Suspected"
   	end
   end
 

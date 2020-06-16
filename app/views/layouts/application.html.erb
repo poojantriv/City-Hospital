@@ -47,7 +47,7 @@
                             <strong>Ward : <%= ward %> </strong>
                             <div class="text-small">Air   : <%= Patient.where(ward: ward, air: "Air").size %></div>
                             <div class="text-small">O2    :<%= Patient.where(ward: ward, air: "O2").size %></div>
-                            <div class="text-small">BiPep :<%= Patient.where(ward: ward, air: "BiPep").size %></div>
+                            <div class="text-small">BiPp :<%= Patient.where(ward: ward, air: "BiPap").size %></div>
                             <div class="text-small">Ventilator :<%= Patient.where(ward: ward, air: "Ventilator").size %></div>
                             <hr class="no-margin">
                             <div class="text-medium">Total :<%= Patient.where(ward: ward).size %></div>
@@ -89,7 +89,7 @@
           </footer>
       </div>
    </div>
-
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </body>

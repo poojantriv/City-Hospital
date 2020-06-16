@@ -13,38 +13,41 @@
   <form>
   <div class="form-group">
     <%= form.label :name, class: "small mb-1" %>
-    <%= form.text_field :name, class: "form-control py-4" %>
+    <%= form.text_field :name, class: "form-control py-4", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :age, class: "small mb-1" %>
-    <%= form.text_field :age, class: "form-control py-4" %>
+    <%= form.text_field :age, class: "form-control py-4", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :mrd, class: "small mb-1" %>
-    <%= form.text_field :mrd, class: "form-control py-4" %>
+    <%= form.text_field :mrd, class: "form-control py-4", required: true %>
   </div>
 
-  <div class="form-group">
+<!--   <div class="form-group">
     <%= form.label :ward, class: "small mb-1" %>
-    <%= form.text_field :ward, class: "form-control py-4" %>
-  </div>
+    <%= form.text_field :ward, class: "form-control py-4", required: true %>
+  </div> -->
+    <p class="text-medium"> Ward :
+    <%= form.select :ward, ['801', '802', '803', '804', '701', '702', '703', '704', '601', '602', '603', '604','501', '502', '503', '504',], class: "dropdown", required: true, placeholder: "Ward" %>
+    </p>
 
   <div class="form-group">
     <%= form.label :phone, class: "small mb-1" %>
-    <%= form.text_field :phone, class: "form-control py-4" %>
+    <%= form.text_field :phone, class: "form-control py-4", required: true %>
   </div>
 
 
   <div class="form-group">
     <%= form.label :address, class: "small mb-1" %>
-    <%= form.text_field :address, class: "form-control py-4" %>
+    <%= form.text_field :address, class: "form-control py-4", required: true %>
   </div>
 
 
   <div class="form-group">
-    <%= form.label "Positive / Suspected", class: "small mb-1" %>
+    <%= form.label "Positive?", class: "small mb-1" %>
     <%= form.check_box :status, {:class => "form-control py-4"}, "Positive", "Suspected" %>
   </div>
 
@@ -53,16 +56,18 @@
     <%= form.text_field :air, class: "form-control py-4" %>
   </div> -->
 
-  <%= form.select :air, ['Air', 'O2', 'BiPep', 'Ventilator'], class: "dropdown" %>
+  <p class="text-medium"> Oxygen Status :
+  <%= form.select :air, ['Air', 'O2', 'BiPap', 'Ventilator'], class: "dropdown", required: true %>
+  </p>
 
   <div class="form-group">
     <%= form.label :bed, class: "small mb-1" %>
-    <%= form.text_field :bed, class: "form-control py-4" %>
+    <%= form.text_field :bed, class: "form-control py-4", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :history, class: "small mb-1" %>
-    <%= form.text_field :history, class: "form-control py-4" %>
+    <%= form.text_field :history, class: "form-control py-4", required: true %>
   </div>
 
   <!-- if params[:id] is nil, then we are in new controller, if not nil, we are in edit -->
@@ -72,7 +77,7 @@
 
   <div class="form-group">
     <%= form.label "Discharged", class: "small mb-1" %>
-    <%= form.check_box :discharged, {:class => "form-control py-4"}%>
+    <%= form.check_box :discharged, class: "form-control py-4", required: true%>
   </div>
 
   <div class="actions">

@@ -1,25 +1,38 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  helper_method :admin?
   skip_before_action :authorised, only: [:new, :create]
 
   # GET /users
   # GET /users.json
   def index
+    if !admin?
+      redirect_to '/index'
+    end
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    if !admin?
+      redirect_to '/index'
+    end
   end
 
   # GET /users/new
   def new
+    if !admin?
+      redirect_to '/index'
+    end
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    if !admin?
+      redirect_to '/index'
+    end
   end
 
   # POST /users

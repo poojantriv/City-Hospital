@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
 helper_method :current_user
 before_action :authorised 
-before_action :admin?
 helper_method :ward
+helper_method :admin?
+
+
 
 
   def current_user
@@ -31,7 +33,7 @@ helper_method :ward
   def admin?
     if !current_user.nil?
       @admin = current_user.email
-      if @admin == "sdmc_documents"
+      if @admin == "Bali"
         return true
       end
     end 

@@ -79,7 +79,7 @@
             <thead>
               <tr>
                 <th>MRD</th>
-                <th>Name</th>
+                <th>Name/Age</th>
                 <th>Ward</th>
                 <th>Air</th>
                 <th>Delete | Edit</th>
@@ -90,7 +90,7 @@
               <% @patients.each do |patient| %>
                 <% if patient.status == "Positive"  %>
                     <td><%= patient.mrd %></td>
-                    <td><%= link_to patient.name, patient %></td>
+                    <td><%= link_to patient.name, patient %> / <%= patient.age %> </td>
                     <td><%= patient.ward %></td>
                     <td><%= patient.air %></td>
                     <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %> |
@@ -119,7 +119,7 @@
             <thead>
               <tr>
                 <th>MRD</th>
-                <th>Name</th>
+                <th>Name/Age</th>
                 <th>Ward</th>
                 <th>Air</th>
                 <th>Delete | Edit</th>
@@ -130,7 +130,7 @@
               <% @patients.each do |patient| %>
                 <% if patient.status == "Suspected" %>
                     <td><%= patient.mrd %></td>
-                    <td><%= link_to patient.name, patient %></td>
+                    <td><%= link_to patient.name, patient %> / <%= patient.age %></td>
                     <td><%= patient.ward %></td>
                     <td><%= patient.air %></td>
                     <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %> |

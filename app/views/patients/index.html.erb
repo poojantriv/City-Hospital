@@ -87,7 +87,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @patients.each do |patient| %>
+              <% @patients.all.order(bed: :asc).each do |patient| %>
                 <% if patient.status == "Positive"  %>
                     <td><%= patient.mrd %></td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %> </td>

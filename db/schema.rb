@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_131335) do
+ActiveRecord::Schema.define(version: 2020_06_21_191731) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "folders", force: :cascade do |t|
     t.string "bp"
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_131335) do
     t.string "address"
     t.string "status"
     t.string "air"
-    t.string "bed"
+    t.integer "bed"
     t.string "history"
     t.integer "user_id"
     t.datetime "created_at", null: false

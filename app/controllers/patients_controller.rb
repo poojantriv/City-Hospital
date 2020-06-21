@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all.order(ward: :asc)
+    @patients = Patient.all.order(bed: :asc)
   end
 
   # GET /patients/1

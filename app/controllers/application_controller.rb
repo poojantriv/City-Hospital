@@ -33,7 +33,7 @@ helper_method :admin?
   def admin?
     if !current_user.nil?
       @admin = current_user.email
-      if @admin == "Bali"
+      if @admin == "Bali.jadeja@gmail.com"
         return true
       end
     end 

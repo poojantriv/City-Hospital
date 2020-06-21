@@ -80,7 +80,7 @@
               <tr>
                 <th>MRD</th>
                 <th>Name/Age</th>
-                <th>Ward</th>
+                <th>Ward/Bed</th>
                 <th>Air</th>
                 <th>Delete | Edit</th>
                 <th>Doc</th>
@@ -91,7 +91,7 @@
                 <% if patient.status == "Positive"  %>
                     <td><%= patient.mrd %></td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %> </td>
-                    <td><%= patient.ward %></td>
+                    <td><%= patient.ward %> / <%= patient.bed %></td>
                     <td><%= patient.air %></td>
                     <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %> |
                         <%= link_to 'Edit', edit_patient_path(patient) %>                    
@@ -120,7 +120,7 @@
               <tr>
                 <th>MRD</th>
                 <th>Name/Age</th>
-                <th>Ward</th>
+                <th>Ward/Bed</th>
                 <th>Air</th>
                 <th>Delete | Edit</th>
                 <th>Doc</th>
@@ -131,7 +131,7 @@
                 <% if patient.status == "Suspected" %>
                     <td><%= patient.mrd %></td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %></td>
-                    <td><%= patient.ward %></td>
+                    <td><%= patient.ward %> / <%= patient.bed %></td>
                     <td><%= patient.air %></td>
                     <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %> |
                     <%= link_to 'Edit', edit_patient_path(patient) %>                    

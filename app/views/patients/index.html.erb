@@ -92,7 +92,7 @@
                     <td>
                       <%= patient.mrd %> 
                       <% if !patient.DOA.nil? %>
-                        / <b class="text-medium"> <%= (patient.DOA-patient.created_at.to_date).to_i  %> </b>
+                        / <b class="text-medium"> <%= (Time.now.to_date-patient.DOA).to_i  %> </b>
                       <% end %>
                     </td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %> </td>
@@ -136,8 +136,8 @@
                 <% if patient.status == "Suspected" %>
                     <td>
                       <%= patient.mrd %> /
-                      <% if !@patient.DOA.nil? %>
-                        <%= (@patient.DOA-@patient.created_at.to_date).to_i  %>
+                      <% if !patient.DOA.nil? %>
+                        / <b class="text-medium"> <%= (Time.now.to_date-patient.DOA).to_i  %> </b>
                       <% end %>
                     </td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %></td>

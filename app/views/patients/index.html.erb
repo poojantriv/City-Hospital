@@ -78,7 +78,7 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>MRD</th>
+                <th>MRD/Days</th>
                 <th>Name/Age</th>
                 <th>Ward/Bed</th>
                 <th>Air</th>
@@ -89,7 +89,12 @@
             <tbody>
               <% @patients.each do |patient| %>
                 <% if patient.status == "Positive"  %>
-                    <td><%= patient.mrd %></td>
+                    <td>
+                      <%= patient.mrd %> 
+                      <% if !patient.DOA.nil? %>
+                        / <b class="text-medium"> <%= (patient.DOA-patient.created_at.to_date).to_i  %> </b>
+                      <% end %>
+                    </td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %> </td>
                     <td><%= patient.ward %> / <%= patient.bed %></td>
                     <td><%= patient.air %></td>
@@ -118,7 +123,7 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>MRD</th>
+                <th>MRD/Days</th>
                 <th>Name/Age</th>
                 <th>Ward/Bed</th>
                 <th>Air</th>
@@ -129,7 +134,12 @@
             <tbody>
               <% @patients.each do |patient| %>
                 <% if patient.status == "Suspected" %>
-                    <td><%= patient.mrd %></td>
+                    <td>
+                      <%= patient.mrd %> /
+                      <% if !@patient.DOA.nil? %>
+                        <%= (@patient.DOA-@patient.created_at.to_date).to_i  %>
+                      <% end %>
+                    </td>
                     <td><%= link_to patient.name, patient %> / <%= patient.age %></td>
                     <td><%= patient.ward %> / <%= patient.bed %></td>
                     <td><%= patient.air %></td>
